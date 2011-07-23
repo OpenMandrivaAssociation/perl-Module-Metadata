@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    %mkrel 5
 
 Summary:    Gather package and POD information from perl module files
 License:    GPL+ or Artistic
@@ -12,7 +12,7 @@ Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(version) >= 0.870
-BuildRequires: perl-version >= 0.870
+BuildRequires: perl-version >= 1:0.870
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
