@@ -1,20 +1,19 @@
 %define upstream_name    Module-Metadata
 %define upstream_version 1.000004
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 5
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	6
 
-Summary:    Gather package and POD information from perl module files
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Gather package and POD information from perl module files
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(version) >= 0.870
-BuildRequires: perl-version >= 1:0.870
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(version)
+BuildArch:	noarch
 
 %description
 The *Tie::CPHash* module provides a hash table that is case preserving but
@@ -31,24 +30,26 @@ return the key that was used to set the value.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Sat Jul 23 2011 Shlomi Fish <shlomif@mandriva.org> 1.0.4-5mdv2012.0
++ Revision: 691279
+- Fix the perl-version buildrequires to be 1:0.870. Thanks to proyvind.
+- Add a dependency on perl-version. Sigh.
+- Fixed the perl(version) to 0.870 instead of 0.87
+- Add an explicit version on perl(version)
+- import perl-Module-Metadata
 
