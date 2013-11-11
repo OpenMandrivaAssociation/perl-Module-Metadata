@@ -1,15 +1,15 @@
 %define upstream_name    Module-Metadata
-%define upstream_version 1.000004
+%define upstream_version 1.000019
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Release:	1
 
 Summary:	Gather package and POD information from perl module files
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Module/Module-Metadata-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(version)
@@ -52,4 +52,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 - Fixed the perl(version) to 0.870 instead of 0.87
 - Add an explicit version on perl(version)
 - import perl-Module-Metadata
+
 
