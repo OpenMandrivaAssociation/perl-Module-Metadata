@@ -1,15 +1,16 @@
 %define upstream_name    Module-Metadata
-%define upstream_version 1.000019
+%define upstream_version 1.000022
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Gather package and POD information from perl module files
+
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Module/Module-Metadata-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(version)
@@ -43,14 +44,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes META.yml
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Sat Jul 23 2011 Shlomi Fish <shlomif@mandriva.org> 1.0.4-5mdv2012.0
-+ Revision: 691279
-- Fix the perl-version buildrequires to be 1:0.870. Thanks to proyvind.
-- Add a dependency on perl-version. Sigh.
-- Fixed the perl(version) to 0.870 instead of 0.87
-- Add an explicit version on perl(version)
-- import perl-Module-Metadata
 
 
