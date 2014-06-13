@@ -1,11 +1,12 @@
 %define upstream_name    Module-Metadata
-%define upstream_version 1.000022
+%define upstream_version 1.000024
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Gather package and POD information from perl module files
+
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -44,5 +45,6 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc Changes META.yml
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 
 
