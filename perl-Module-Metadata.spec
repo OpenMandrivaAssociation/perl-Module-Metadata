@@ -16,6 +16,7 @@ Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstrea
 BuildRequires:	perl-devel
 BuildRequires:	perl(version)
 BuildRequires:  perl(Pod::Coverage)
+BuildRequires:  perl(Test::More)
 BuildArch:	noarch
 
 %description
