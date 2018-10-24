@@ -1,9 +1,9 @@
 %define upstream_name    Module-Metadata
-%define upstream_version 1.000024
+%define upstream_version 1.000027
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Gather package and POD information from perl module files
 
@@ -15,6 +15,7 @@ Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstrea
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(version)
+BuildRequires:  perl(Pod::Coverage)
 BuildArch:	noarch
 
 %description
